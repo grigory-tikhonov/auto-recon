@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scan report - {{TARGET}}</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+        margin: 0; background: #f5f6f8; color: #222; line-height: 1.5;
+    }
+    header { background: #1a1f2e; color: #fff; padding: 24px 32px; }
+    header h1 { margin: 0 0 6px; font-size: 22px; }
+    header .meta { color: #a9b1c2; font-size: 13px; }
+    main { max-width: 1100px; margin: 24px auto; padding: 0 24px; }
+    .cards {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 14px; margin-bottom: 28px;
+    }
+    .card {
+        background: #fff; border-radius: 8px; padding: 16px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    .card .value { font-size: 28px; font-weight: 700; color: #1a1f2e; }
+    .card .label {
+        font-size: 12px; color: #6b7280; text-transform: uppercase;
+        letter-spacing: .04em;
+    }
+    section {
+        background: #fff; border-radius: 8px; padding: 20px 24px;
+        margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    section h2 {
+        margin: 0 0 14px; font-size: 18px; 
+        border-bottom: 2px solid #eef0f4; padding-bottom: 8px;
+    }
+    section h3 { margin: 18px 0 8px; font-size: 15px; color: #374151; }
+    section h4 { margin: 8px 0 4px; font-size: 14px; color: #111827; }
+    code {
+        background: #eef2ff; color: #3730a3; padding: 1px 6px;
+        border-radius: 4px; font-size: 12.5px;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 14px; }
+    th {
+        text-align: left; background: #f9fafb; padding: 8px 10px;
+        border-bottom: 2px solid #e5e7eb; font-size: 12px;
+        text-transform: uppercase; color: #6b7280; letter-spacing: .04em;
+    }
+    td { padding: 8px 10px; border-bottom: 1px solid #f0f1f4; vertical-align: top; }
+    .cve { padding: 10px 0; border-bottom: 1px dashed #e5e7eb; }
+    .cve:last-child { border-bottom: none; }
+    .cve ul { margin: 4px 0 0 20px; padding: 0; }
+    .cve li { margin: 2px 0; }
+    .muted { color: #9ca3af; font-style: italic; }
+    .sev-crit {
+        background: #fee2e2; color: #991b1b; padding: 2px 8px;
+        border-radius: 4px; font-weight: 600; font-size: 11px;
+    }
+    .sev-high {
+        background: #ffedd5; color: #9a3412; padding: 2px 8px;
+        border-radius: 4px; font-weight: 600; font-size: 11px;
+    }
+    .sev-med  {
+        background: #fef3c7; color: #92400e; padding: 2px 8px;
+        border-radius: 4px; font-weight: 600; font-size: 11px;
+    }
+    .sev-low  {
+        background: #dbeafe; color: #1e40af; padding: 2px 8px;
+        border-radius: 4px; font-weight: 600; font-size: 11px;
+    }
+    .sev-na   {
+        background: #f3f4f6; color: #4b5563; padding: 2px 8px;
+        border-radius: 4px; font-weight: 600; font-size: 11px;
+    }
+    footer { text-align: center; color: #9ca3af; font-size: 12px; padding: 24px; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Vulnerability Scan Report</h1>
+    <div class="meta">
+        Target: <strong>{{TARGET}}</strong> &middot;
+        Generated: {{GENERATED_AT}} &middot;
+        Tool: {{TOOL}}
+    </div>
+</header>
+
+<main>
+
+    <div class="cards">
+        {{SUMMARY_CARDS}}
+    </div>
+
+    <section>
+        <h2>Exploitable - Metasploit modules</h2>
+        {{EXPLOITS_BLOCK}}
+    </section>
+
+    <section>
+        <h2>Built-in signature database</h2>
+        {{BUILTIN_BLOCK}}
+    </section>
+
+    <section>
+        <h2>NVD findings (HIGH / MEDIUM confidence)</h2>
+        {{NVD_BLOCK}}
+    </section>
+
+    {{AUXILIARY_SECTION}}
+
+</main>
+
+<footer>auto-recon - passive reconnaissance &middot; not for use without authorization</footer>
+
+</body>
+</html>
