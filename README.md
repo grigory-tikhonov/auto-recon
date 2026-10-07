@@ -200,6 +200,16 @@ Running any vulnerability scanner against systems you do not own or administer i
 
 ---
 
+## Acknowledgments
+
+- [NIST NVD](https://nvd.nist.gov/) - for the public CVE API
+- [Metasploit Framework](https://github.com/rapid7/metasploit-framework) - for the module database this tool indexes
+- [Nmap](https://nmap.org/) - for the underlying service scanner
+- [Kali Linux](https://www.kali.org/) - for the environment this tool was developed and tested on
+- [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2/) - for the intentionally vulnerable VM used in testing
+
+---
+
 ## License
 
 MIT - see [LICENSE](LICENSE).
