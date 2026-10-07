@@ -1,6 +1,6 @@
 # auto-recon
 
-A passive vulnerability reconnaissance tool that correlates Nmap service banners with the NIST NVD and Metasploit module database to product a focused, high-signal report.
+A passive vulnerability reconnaissance tool that correlates Nmap service banners with the NIST NVD and Metasploit module database to produce a focused, high-signal report.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
