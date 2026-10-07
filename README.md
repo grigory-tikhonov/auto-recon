@@ -200,6 +200,14 @@ Running any vulnerability scanner against systems you do not own or administer i
 
 ---
 
+## Contributing
+
+This is a personal learning project, but issues and pull requests are welcome.
+
+If you find a bug or want to suggest a feature, please open an issue first to discuss the change.
+
+---
+
 ## Acknowledgments
 
 - [NIST NVD](https://nvd.nist.gov/) - for the public CVE API
